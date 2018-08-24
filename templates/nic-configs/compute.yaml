@@ -102,6 +102,14 @@ resources:
               type: interface
               name: nic1
               use_dhcp: false
+            -
+              type: interface
+              name: nic2
+              use_dhcp: false
+            -
+              type: interface
+              name: nic3
+              use_dhcp: false
               dns_servers: {get_param: DnsServers}
               addresses:
                 -
@@ -123,8 +131,9 @@ resources:
               members:
                 -
                   type: interface
-                  name: nic2
+                  name: nic4
                   use_dhcp: false
+                  primary: true
                 -
                   type: vlan
                   vlan_id: {get_param: InternalApiNetworkVlanID}
@@ -143,14 +152,6 @@ resources:
                   addresses:
                     -
                       ip_netmask: {get_param: TenantIpSubnet}
-            -
-              type: interface
-              name: nic3
-              use_dhcp: false
-            -
-              type: interface
-              name: nic4
-              use_dhcp: false
 
 outputs:
   OS::stack_id:

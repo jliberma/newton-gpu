@@ -6,16 +6,16 @@ parameter_defaults:
   NeutronExternalNetworkBridge: "''"
   InternalApiNetCidr: 172.17.1.0/24
   InternalApiAllocationPools: [{'start': '172.17.1.10', 'end': '172.17.1.200'}]
-  InternalApiNetworkVlanID: 101
+  InternalApiNetworkVlanID: 201
   TenantNetCidr: 172.17.2.0/24
   TenantAllocationPools: [{'start': '172.17.2.10', 'end': '172.17.2.200'}]
-  TenantNetworkVlanID: 201
+  TenantNetworkVlanID: 202
   StorageNetCidr: 172.17.3.0/24
   StorageAllocationPools: [{'start': '172.17.3.10', 'end': '172.17.3.200'}]
-  StorageNetworkVlanID: 301
+  StorageNetworkVlanID: 203
   StorageMgmtNetCidr: 172.17.4.0/24
   StorageMgmtAllocationPools: [{'start': '172.17.4.10', 'end': '172.17.4.200'}]
-  StorageMgmtNetworkVlanID: 401
+  StorageMgmtNetworkVlanID: 204
   ExternalNetCidr: 192.168.122.0/24
   ExternalAllocationPools: [{'start': '192.168.122.100', 'end': '192.168.122.129'}]
   ExternalInterfaceDefaultRoute: 192.168.122.1
