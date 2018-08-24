@@ -133,7 +133,6 @@ resources:
                   type: interface
                   name: nic4
                   use_dhcp: false
-                  primary: true
                 -
                   type: vlan
                   vlan_id: {get_param: InternalApiNetworkVlanID}
