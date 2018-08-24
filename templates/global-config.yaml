@@ -1,0 +1,10 @@
+parameter_defaults:
+
+  ControllerCount: 1
+  OvercloudControlFlavor: control
+  ComputeCount: 1
+  OvercloudComputeFlavor: compute
+  TimeZone: 'US/Eastern'
+  NtpServer: '10.16.255.1'
+  NeutronNetworkType: 'vxlan,vlan'
+  NeutronTunnelTypes: 'vxlan'
