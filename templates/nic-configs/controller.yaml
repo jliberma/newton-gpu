@@ -114,7 +114,7 @@ resources:
                   ip_netmask: 169.254.169.254/32
                   next_hop: {get_param: EC2MetadataIp}
             -
-              type: ovs_bridge
+              type: linux_bridge
               name: {get_input: bridge_name}
               dns_servers: {get_param: DnsServers}
               addresses:
@@ -127,7 +127,7 @@ resources:
               members:
                 -
                   type: linux_bond
-                  name: bond1
+                  name: bond0
                   bonding_options: {get_param: BondInterfaceOvsOptions}
                   members:
                     -
@@ -138,12 +138,12 @@ resources:
                       type: interface
                       name: nic3
             -
-              type: ovs_bridge
+              type: linux_bridge
               name: br-vlan
               members:
                 -
                   type: linux_bond
-                  name: bond2
+                  name: bond1
                   bonding_options: {get_param: BondInterfaceOvsOptions}
                   members:
                     -
@@ -155,28 +155,28 @@ resources:
                       name: nic5
                 -
                   type: vlan
-                  device: bond2
+                  device: bond1
                   vlan_id: {get_param: InternalApiNetworkVlanID}
                   addresses:
                     -
                       ip_netmask: {get_param: InternalApiIpSubnet}
                 -
                   type: vlan
-                  device: bond2
+                  device: bond1
                   vlan_id: {get_param: StorageNetworkVlanID}
                   addresses:
                     -
                       ip_netmask: {get_param: StorageIpSubnet}
                 -
                   type: vlan
-                  device: bond2
+                  device: bond1
                   vlan_id: {get_param: StorageMgmtNetworkVlanID}
                   addresses:
                     -
                       ip_netmask: {get_param: StorageMgmtIpSubnet}
                 -
                   type: vlan
-                  device: bond2
+                  device: bond1
                   vlan_id: {get_param: TenantNetworkVlanID}
                   addresses:
                     -

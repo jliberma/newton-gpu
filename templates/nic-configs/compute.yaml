@@ -102,10 +102,12 @@ resources:
               type: interface
               name: nic1
               use_dhcp: false
+              defroute: false
             -
               type: interface
               name: nic2
               use_dhcp: false
+              defroute: false
             -
               type: interface
               name: nic3
